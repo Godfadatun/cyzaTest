@@ -1,0 +1,54 @@
+/*
+  Colors
+*/
+$white: #fff;
+$black: #000;
+
+$light-grey: #f1f3f4;
+$grey: #888888;
+$darker-grey: #7f8c8d;
+$blue-grey: #34495e;
+$dark-grey: #111111;
+
+
+$green: #2ecc71;
+$pink: #e84393;
+$blue: #6c5ce7;
+$red: #f22613;
+
+$base-color: $pink;
+$alternate-color: $blue;
+$tertiary-color: $green;
+$accent-color: $red;
+
+/*
+  Font Stacks
+*/
+
+$stack-sans-serif: Helvetica, Arial, sans-serif;
+$stack-open-sans: 'Roboto', $stack-sans-serif;
+$stack-headings: 'Roboto', $stack-sans-serif;
+$font-color: $darker-grey;
+
+
+/*
+  Body
+*/
+$body-background: $blue-grey;
+$white-background: $white;
+$dark-background: $light-grey;
+
+/*
+  Navigation
+*/
+$nav-bkg: $dark-grey;
+
+/*
+  Breakpoints
+*/
+$brk-point-small:   'screen and (min-width: ' + em(450) + ')';
+$brk-point-custom-small:   'screen and (min-width: ' + em(550) + ')';
+$brk-point-medium:  'screen and (min-width: '+ em(760) + ')';
+$brk-point-custom-medium:  'screen and (min-width: '+ em(989) + ')';
+$brk-point-large:   'screen and (min-width: ' + em(1023) + ')';
+$brk-point-custom-large:   'screen and (min-width: ' + em(1200) + ')';

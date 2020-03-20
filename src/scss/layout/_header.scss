@@ -1,0 +1,106 @@
+nav {
+  display: flex;
+  color: $white;
+  flex-direction: row;
+
+  .container {
+    background: $nav-bkg;
+    justify-content: space-between;
+    padding: em(10);
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    @include brkpnt(tablet) {
+      padding: em(20) em(40);
+    }
+
+    .site-logo {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: em(20);
+        font-weight: bold;
+      }
+
+      span {
+        font-size: em(12);
+        color: $grey;
+        margin-top: em(-8);
+      }
+    }
+
+    .search {
+      @extend %btn-no-bkg;
+      background: url("/images/icons/search.svg");
+      width: em(25);
+      height: em(25);
+      align-self: center;
+      margin-left: auto;
+
+      @include brkpnt(custom-desktop) {
+        margin-left: 0;
+      }
+    }
+
+    .mobile-btn {
+      @extend %btn-no-bkg;
+      margin-left: em(20);
+
+      span {
+        display: block;
+        margin: em(5) 0;
+        width: em(4);
+        height: em(4);
+        border-radius: 100%;
+        background: $white;
+      }
+
+      @include brkpnt(custom-desktop) {
+        display: none;
+      }
+    }
+  }
+}
+
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}

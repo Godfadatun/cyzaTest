@@ -1,0 +1,218 @@
+section {
+  display: flex;
+  flex-direction: column;
+  color: $font-color;
+
+  .container {
+    justify-content: center;
+    background: $white-background;
+
+    @include brkpnt(phone) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: left;
+    }
+
+    &.dark {
+      background: $dark-background;
+    }
+
+    &.main-articles,
+    div.main-articles {
+      color: $black;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-size: em(28);
+        color: $dark-grey;
+      }
+      a {
+        color: $pink;
+      }
+      ul {
+        list-style-type: none;
+        padding: unset;
+        padding-left: em(10);
+
+        li::before {
+          content: url("/images/icons/check-circle-li-li.svg");
+          padding: 0px em(20) 0px 0px;
+        }
+      }
+
+      figure {
+        margin: em(5);
+        display: flex;
+        iframe {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    div.author {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: em(45);
+      img {
+        border-radius: 50%;
+        margin-right: em(15);
+      }
+      .author-name {
+        color: $black;
+      }
+    }
+
+    .featured-news-item {
+      display: none;
+      flex: 1;
+      @include brkpnt(custom-tablet) {
+        display: flex;
+      }
+    }
+
+    .top-news-items {
+      display: flex;
+      flex: 1;
+    }
+
+    .caption {
+      color: $black;
+      font-style: italic;
+      padding: em(10);
+    }
+
+    .title {
+      display: flex;
+      color: $black;
+      width: 100%;
+      padding: em(10);
+      padding-bottom: em(15);
+      text-transform: capitalize;
+      .colors {
+        margin-right: em(10);
+        span {
+          display: block;
+          margin: 0;
+          width: em(10);
+          height: em(10);
+          border-radius: 100%;
+        }
+        :first-child {
+          background: $pink;
+          opacity: 0.6;
+        }
+        :nth-child(2) {
+          background: $blue;
+          margin-top: em(-5);
+        }
+      }
+    }
+
+    div.section-title {
+      margin-top: em(50);
+      padding: em(30);
+      h1,
+      h2,
+      h3 {
+        color: $black;
+        font-weight: 600;
+        font-size: em(50);
+        line-height: em(17);
+      }
+    }
+
+    .sticky-card {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 6rem;
+    }
+
+    div.aams-img {
+      position: relative;
+    }
+
+    div.aams-img::after {
+      position: absolute;
+      display: block;
+      content: "";
+      background: url(../images/icons/logo-adm-timone.svg) no-repeat em(145) 0px,
+        url(../images/icons/logo-adm.svg) no-repeat em(95) 0px,
+        url(../images/icons/plus-18.svg) no-repeat em(180) 0px;
+      bottom: 0;
+      right: 0;
+      margin: 0.3125em;
+    }
+    div.aams-img.small::after {
+      width: em(200);
+      height: em(10);
+      background: unset;
+      background: url(/images/icons/logo-adm-timone.svg) no-repeat em(115) 0px,
+        url(/images/icons/logo-adm.svg) no-repeat em(90) 0px,
+        url(/images/icons/plus-18.svg) no-repeat em(135) 0px;
+
+      right: unset;
+      left: -80;
+      @include brkpnt(tablet) {
+        left: -50;
+      }
+      @include brkpnt(desktop) {
+        left: -30;
+      }
+      @include brkpnt(desktop) {
+        left: -10;
+      }
+    }
+    div.aams-img.medium::after {
+      width: 12.5em;
+      height: 1.25em;
+    }
+    div.aams-img.larg::after {
+      width: 15.5em;
+      height: 2.25em;
+      background: unset;
+      background: url(/images/icons/logo-adm-timone.svg) no-repeat em(140) 0px,
+        url(/images/icons/logo-adm.svg) no-repeat em(55) 0px,
+        url(/images/icons/plus-18.svg) no-repeat em(200) 0px;
+    }
+
+    .loader {
+      border: 3px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 3px solid #3498db;
+      width: 20px;
+      height: 20px;
+      -webkit-animation: spin 2s linear infinite; /* Safari */
+      animation: spin 2s linear infinite;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

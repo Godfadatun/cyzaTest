@@ -1,0 +1,98 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    .container {
+
+        .navigation {
+            @extend %ul-no-bullets;
+
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            margin: em(-20) 0;
+            padding: 0;
+
+            @include brkpnt(custom-desktop) {
+                display: flex;
+            }
+
+            li {
+                height: 100%;
+
+                a {
+                    position: relative;
+                    display: flex;
+                    color: $white;
+                    text-decoration: none;
+                    padding: em(10);
+                    align-items: center;
+                    border: 2px solid transparent;
+                    transition: border 1s, color 1s;
+                    height: 100%;
+
+                    &:hover {
+                        border-bottom-color: $base-color;
+                        color: $base-color;
+                    }
+
+                    & > span {
+                        position: absolute;
+                        top: em(14);
+                        right: 0;
+                        font-size: em(10);
+                        font-weight: bold;
+                        color: $white;
+                        border-radius: em(12);
+                        padding: em(1) em(8);
+
+                        &.base {
+                            background: $base-color;
+                        }
+
+                        &.tertiary {
+                            background: $tertiary-color;
+                        }
+                    }
+                }
+            }
+
+            .dropdown {
+                a {
+                    span {
+                        top: unset;
+                        right: unset;
+                        bottom: 20px;
+                        left: 20px;
+                    }
+                }
+                ul {
+                    display: none;
+                    position: absolute;
+                    top: 80px;
+                }
+                &:hover > ul {
+                    display: flex;
+                    flex-direction: column;
+                    background: $white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    @extend %ul-no-bullets;
+                    li{
+                       a {
+                            color: $dark-grey;
+                            border: none;
+                            padding: em(5) em(30);
+                            &:hover {
+                                color: $font-color;
+                            }
+                       }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+section.search{
+    .container{
+        @include brkpnt(custom-desktop) {
+            .news {
+                flex-basis: 70%;
+            }
+            .news-sidebar {
+                flex-basis: 30%;
+            }
+        }
+    }
+}

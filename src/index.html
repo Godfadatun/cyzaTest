@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css" type="text/css" media="all">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <section >
+          <div class="tablink" onclick="openPage('Home', this, 'red')">Home</div>
+          <div class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</div>
+          <div class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</div>
+          <div class="tablink" onclick="openPage('About', this, 'orange')">About</div>
+
+
+          <div id="Home" class="tabcontent">
+            <h3>Home</h3>
+            <p>Home is where the heart is..</p>
+          </div>
+
+          <div id="News" class="tabcontent">
+            <h3>News</h3>
+            <p>Some news this fine day!</p>
+          </div>
+
+          <div id="Contact" class="tabcontent">
+            <h3>Contact</h3>
+            <p>Get in touch, or swing by for a cup of coffee.</p>
+          </div>
+
+          <div id="About" class="tabcontent">
+            <h3>About</h3>
+            <p>Who we are and what we do.</p>
+          </div>
+        </section>
+
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
+
