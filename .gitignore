@@ -1,4 +1,5 @@
 #Excluded Directories
 .git
 /node_modules
+/static
 /dist
