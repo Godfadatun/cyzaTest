@@ -1,0 +1,43 @@
+.btn {
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+  padding: 5px 13px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.btn2 {
+  font-size: 15px
+}
+
+.info {
+  border-color: #2196F3;
+  color: dodgerblue;
+}
+
+.info:hover { background: rgb(87, 179, 255); color: white; }
+.info:active { background: #2196F3; color: white; }
+
+.default { border-color: #e7e7e7; color: black; }
+.default:hover { background: #e7e7e7; }
+
+.btn-filled {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.default-filled {background-color: #e7e7e7; color: black;} /* Gray */
+.default-filled:hover {background: rgb(87, 179, 255);}
+.default-filled:active {background: #2196F3; color: white;}
+
+.info-filled {background-color: #2196F3; text-transform: uppercase; font-weight: bold; font-size: 14px; border-radius: 2px;} /* Gray */
+.info-filled:hover {background: #0b7dda;}
+
+
+.base-filled {background-color: #f4f8f9; color: #2196F3; text-transform: uppercase; font-weight: bold; font-size: 14px;} /* Gray */
+.base-filled:hover {background: rgb(87, 179, 255);}
+.base-filled:active {background: #2196F3; color: white;}
