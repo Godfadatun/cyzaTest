@@ -1,0 +1,51 @@
+// text Transform
+.text-capital{text-transform: capitalize;}
+.text-bold{font-weight: bolder;}
+.text-center{text-align: center;}
+
+// text color
+.text-black{color: black;}
+
+
+// margins
+.flex-x-button { margin: 0px 5px;}
+.flex-x-md { margin: 0px 20px;}
+.flex-x-sm { margin: 0px 10px;}
+.flex-y-button { margin: 5px 0px;}
+.flex-button { margin: 5px;}
+.card-margin-tab { margin: -24px 25px 0px 25px; }
+.card-m-default { margin: 25px }
+.card-m-default-s { margin: 5px }
+.card-m-default-x { margin: 25px }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .card-margin-tab { margin: 0px 0px 15px 0px; }
+  .card-m-default-x { margin: 0px }
+}
+
+// padding
+.flex-p-bottom { padding-bottom: 2px;}
+.flex-m-top { padding-top: 5px;}
+// .flex-py-x {padding: 5px 0}
+// .flex-py-s {padding: 15px 0}
+// .flex-py-m {padding: 25px 0}
+// .flex-px-xs {padding: 0 5px}
+// .flex-px-s {padding: 0 15px}
+// .flex-px-m {padding: 0 25px}
+.space-p {padding: 15px }
+
+// background Color
+.bg-white{background-color: #ffffff;}
+.bg-white-x{background-color: #ffffff;}
+@media only screen and (max-width: 768px) {
+/* For mobile phones: */
+.bg-white-x {background-color: #f4f8f9}
+}
+
+// background Color
+.lt-md { display: none; }
+@media only screen and (max-width: 768px) {
+/* For mobile phones: */
+.gt-sm { display : none; }
+.lt-md { display: block; }
+}
