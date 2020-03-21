@@ -86,9 +86,12 @@
           /* text */
           .text-capital{text-transform: capitalize;}
           .text-black{color: black;}
+          .text-bold{font-weight: bolder;}
+          .text-center{text-align: center;}
 
           .flex-x-button { margin: 0px 5px;}
           .flex-x-md { margin: 0px 20px;}
+          .flex-x-sm { margin: 0px 10px;}
           .flex-p-bottom { padding-bottom: 2px;}
           .flex-m-top { padding-top: 5px;}
           .flex-y-button { margin: 5px 0px;}
@@ -131,6 +134,38 @@
           .default-filled:hover {background: rgb(87, 179, 255);}
           .default-filled:active {background: #2196F3; color: white;}
 
+          .info-filled {background-color: #2196F3; text-transform: uppercase; font-weight: bold; font-size: 14px; border-radius: 2px;} /* Gray */
+          .info-filled:hover {background: #0b7dda;}
+
+
+          .base-filled {background-color: #f4f8f9; color: #2196F3; text-transform: uppercase; font-weight: bold; font-size: 14px;} /* Gray */
+          .base-filled:hover {background: rgb(87, 179, 255);}
+          .base-filled:active {background: #2196F3; color: white;}
+
+          .crop {
+              width: 135px;
+              height: 150px;
+              overflow: hidden;
+          }
+
+          .crop img {
+              width: 450px;
+              height: 300px;
+              margin: 7px 0 0 -58px;
+
+          }
+
+          .crop2 {
+              width: 190px;
+              height: 165px;
+              overflow: hidden;
+          }
+
+          .crop2 img {
+              width: 265px;
+              height: 225px;
+              margin: 10px 0 0 -38px;
+          }
 
           [class*="col-"] {
             float: left;
@@ -145,7 +180,6 @@
 
           .column {
             float: left;
-            width: 33.33%;
             padding: 5px;
           }
 
@@ -183,26 +217,25 @@
             .lt-md {
               display: none;
             }
+            .bg-white{background-color: #ffffff;}
+            .bg-white-x{background-color: #ffffff;}
           @media only screen and (max-width: 768px) {
             /* For mobile phones: */
-            .gt-sm {
-              display : none;
-            }
-            .lt-md {
-              display: block;
-            }
+            .gt-sm { display : none; }
+            .lt-md { display: block; }
+            .bg-white-x {background-color: #f4f8f9}
           }
 
           .card {
             /* Add shadows to create the "card" effect */
             box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
             transition: 0.3s;
-            background-color: #ffffff;
             margin: 10px;
           }
 
           .card-margin-tab { margin: -24px 25px 0px 25px; }
           .card-m-default { margin: 25px }
+          .card-m-default-s { margin: 5px }
           .card-m-default-x { margin: 25px }
           .space-p {padding: 15px }
           @media only screen and (max-width: 768px) {
@@ -213,7 +246,7 @@
 
           /* On mouse-over, add a deeper shadow */
           .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 0 12px 4px rgba(0,0,0,0.2);
           }
 
           /* Add some padding inside the card container */
@@ -241,8 +274,8 @@
             min-width: 280px;
             overflow: auto;
             z-index: 1;
-            top: 30%;
-            left: 120%;
+            top: 0%;
+            left: 70%;
           }
 
           .dropdown-content::after {
@@ -253,37 +286,120 @@
             margin-left: 5px;
             border-width: 10px;
             border-style: solid;
-            border-color: transparent red transparent transparent;
+            border-color: transparent white transparent transparent;
           }
 
           .show {display: block;}
 
+          /* input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
 
+            box-shadow: 0px 10px 0px -7px #ebebeb, 0px 10px 0px -7px #ebebeb;
+            -webkit-transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s;
+          }
+
+          input[type=text]:focus {
+            outline: none;
+            box-shadow: 0px 10px 0px -7px #4EA6EA, 0px 10px 0px -7px #4EA6EA;
+          } */
+
+          /* input */
+
+          .floating-label
+          {
+            position: relative;
+            margin-top: 1.75em;
+          }
+
+          .floating-label input[type="text"]
+          {
+            border: none;
+            border-bottom: 1px solid gray;
+            margin-bottom: 1px;
+          }
+
+          .floating-label input[type="text"]:hover
+          {
+            border-bottom: 2px solid black;
+            margin-bottom: 0;
+          }
+
+          .floating-label input[type="text"]:focus,
+          .floating-label input[type="text"]:active
+          {
+            outline: none;
+            border-bottom: 2px solid #2196f3;
+            margin-bottom: 0;
+          }
+
+          .floating-label input[type="text"] + label
+          {
+            position: absolute;
+            pointer-events: none;
+            bottom: 0.1em;
+            left: 0.1em;
+            color: gray;
+            font-size: 1.0em;
+            transition: margin 0.2s ease,
+                        color 0.2s ease,
+                        font-size 0.2s ease;
+          }
+
+          .floating-label input[type="text"]:focus + label,
+          .floating-label input[type="text"]:active + label,
+          .floating-label input[type="text"]:valid + label
+          {
+            pointer-events: auto;
+            margin-bottom: 1.75em;
+            font-size: 0.7em;
+          }
+
+          .floating-label input[type="text"]:focus + label,
+          .floating-label input[type="text"]:active + label
+          {
+            color: gray;
+          }
+
+          .floating-label input[type="text"].empty:not(:focus) + label,
+          .floating-label input[type="text"].empty:not(:active) + label
+          {
+            pointer-events: none;
+            margin-bottom: 0;
+            color: gray;
+            font-size: 1.0em;
+          }
         </style>
     </head>
     <body style="background-color: #f4f8f9">
-        <div class="card card-m-default card-m-default-x" >
+        <div class="card card-m-default card-m-default-x bg-white-x" >
           <div class="flex-container flex-end">
-            <button class="btn info flex-button" style="margin: 10px 20px;">Log Out</button>
+            <button class="btn info flex-button gt-sm" style="margin: 10px 20px;">Log Out</button>
+            <button class="btn-filled base-filled flex-button lt-md" style="margin: 10px 10px;">Log Out</button>
           </div>
           <div class="row">
-            <!-- <div class="col-3" style="position: absolute; z-index: 100; margin-top: -5px">
-              <div class="card" style="max-width: 200px;">
-                  <img src="./images/img/profile_image.jpg" alt="profile" style="width:100%">
+            <div class="col-3 gt-sm" style="position: absolute; z-index: 100; margin-top: -5px">
+              <div class="card crop2" >
+                  <img src="./images/img/profile_image.jpg" alt="profile">
               </div>
-            </div> -->
+            </div>
             <div class="col-3 space-p "></div>
             <div class="col-9" style="padding-bottom: 20px">
-              <div class="flex-container flex-center">
+              <div class="flex-container flex-center gt-sm">
                 <button class="btn btn2 default flex-button text-capital flex-container align-center">
                   <ion-icon name="camera" class="flex-x-button flex-m-top"></ion-icon>
                   <span>Upload Cover Image</span>
                 </button>
               </div>
-              <div class="row text-black">
+
+              <div class="row text-black gt-sm">
                 <div class="col-3">Jessica Parker</div>
-                <div class="col-4 space-p gt-sm"></div>
-                <div class="col-5 flex-container flex-end gt-sm">
+                <div class="col-4 space-p"></div>
+                <div class="col-5 flex-container flex-end">
                   <div class="col-5 flex-container flex-end">
                       <span><ion-icon name="star"></ion-icon></span>
                       <span><ion-icon name="star"></ion-icon></span>
@@ -298,9 +414,32 @@
               </div>
 
               <div class="flex-container flex-start text-black">
-                <div>
+                <div class="gt-sm">
                   <div><ion-icon name="location-outline" class="flex-x-button"></ion-icon>Newport Beach, CA</div>
                   <div><ion-icon name="call-outline" class="flex-x-button"></ion-icon>(949) 325 - 68594</div>
+                </div>
+              </div>
+
+              <!-- Mobile -->
+              <div class="lt-md" style="display: flex; justify-content: center">
+                <div class="card flex-container flex-center crop lt-md" >
+                    <img src="./images/img/profile_image.jpg" alt="profile" >
+                </div>
+              </div>
+              <h3 class="lt-md text-bold text-center">Jessica Parker</h3>
+              <div class="lt-md flex-container flex-start text-black">
+
+                <div><ion-icon name="call-outline" class="flex-x-button"></ion-icon>(949) 325 - 68594</div>
+                <div><ion-icon name="location-outline" class="flex-x-button"></ion-icon>Newport Beach, CA</div>
+                <div class="flex-x-sm">
+                    <span><ion-icon name="star"></ion-icon></span>
+                    <span><ion-icon name="star"></ion-icon></span>
+                    <span><ion-icon name="star"></ion-icon></span>
+                    <span><ion-icon name="star"></ion-icon></span>
+                    <span><ion-icon name="star-outline"></ion-icon></span>
+                </div>
+                <div class="">
+                  <span class="flex-x-sm">6 Reviews</span>
                 </div>
               </div>
               <!-- <hr class="solid"> -->
@@ -308,7 +447,7 @@
           </div>
 
         </div>
-        <div class="row card card-margin-tab" >
+        <div class="row card card-margin-tab bg-white" >
             <div class="col-3 gt-sm space-p"></div>
             <div class="row col-9">
                 <div class="col-7" style="padding: 0px">
@@ -328,7 +467,7 @@
 
 
 
-        <div class="card card-m-default-x" >
+        <div class="card card-m-default-x bg-white" >
           <div id="About" class="tabcontent">
             <div class="row">
               <div class="x-col-3">
@@ -349,21 +488,31 @@
                 Jessica Parker
 
                 <div class="dropdown">
-                  <button class="btn-filled default-filled flex-button popup gt-sm" onclick="myFunction()" >
+                  <button class="btn-filled default-filled flex-button popup gt-sm" onclick="myFunction('fullname')" >
                     <ion-icon name="pencil-sharp" ></ion-icon>
                   </button>
 
-                  <div id="myDropdown" class="dropdown-content">
+                  <div id="fullname" class="dropdown-content">
 
-                    <div class="card">
-                      <label for="email"><b>Email</b></label>
-                      <input type="text" placeholder="Enter Email" name="email" required>
-                      <input type="submit" value="Send"/>
-                      <span onclick="dFunction()">
-                        <input type="button"  value="Cancel"/>
-                      </span>
+                    <div class="card bg-white ">
+                      <div class="flex-container flex-center">
+                        <div class="floating-label">
+                            <!-- <input type="text" placeholder="Enter Email" name="email" required> -->
+                            <input id="first" type="text" required>
+                            <label for="first">Full Name</label>
+                          </div>
+                      </div>
 
+                      <div class="flex-container flex-center align-center">
+
+                        <input class="btn-filled info-filled card-m-default-s" type="submit" value="Send"/>
+                        <span onclick="dFunction('fullname')">
+                          <input class="btn info card-m-default-s" type="button"  value="Cancel"/>
+                        </span>
+
+                      </div>
                     </div>
+
                   </div>
                 </div>
 
@@ -371,23 +520,103 @@
               <div>
                 <ion-icon name="earth" class="flex-x-button"></ion-icon>
                 www.seller.com
-                <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;">
+                <!-- <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;">
                   <ion-icon name="pencil-sharp" ></ion-icon>
-                </button>
+                </button> -->
+                <div class="dropdown">
+                    <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;" onclick="myFunction('your_website')">
+                      <ion-icon name="pencil-sharp" ></ion-icon>
+                    </button>
+
+                    <div id="your_website" class="dropdown-content">
+
+                      <div class="card bg-white ">
+                        <div class="flex-container flex-center">
+                          <div class="floating-label">
+                              <!-- <input type="text" placeholder="Enter Email" name="email" required> -->
+                              <input id="first" type="text" required>
+                              <label for="first">Your Website</label>
+                            </div>
+                        </div>
+
+                        <div class="flex-container flex-center align-center">
+
+                          <input class="btn-filled info-filled card-m-default-s" type="submit" value="Send"/>
+                          <span onclick="dFunction('your_website')">
+                            <input class="btn info card-m-default-s" type="button"  value="Cancel"/>
+                          </span>
+
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
               </div>
+
               <div>
                 <ion-icon name="location-outline" class="flex-x-button"></ion-icon>
                 Newport Beach, CA
-                <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;">
-                  <ion-icon name="pencil-sharp" ></ion-icon>
-                </button>
+
+                <div class="dropdown">
+                  <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;" onclick="myFunction('city_state_zip')">
+                    <ion-icon name="pencil-sharp" ></ion-icon>
+                  </button>
+
+                  <div id="city_state_zip" class="dropdown-content">
+
+                    <div class="card bg-white ">
+                      <div class="flex-container flex-center">
+                        <div class="floating-label">
+                            <!-- <input type="text" placeholder="Enter Email" name="email" required> -->
+                            <input id="first" type="text" required>
+                            <label for="first">CITY, STATE & ZIP</label>
+                          </div>
+                      </div>
+
+                      <div class="flex-container flex-center align-center">
+
+                        <input class="btn-filled info-filled card-m-default-s" type="submit" value="Send"/>
+                        <span onclick="dFunction('city_state_zip')">
+                          <input class="btn info card-m-default-s" type="button"  value="Cancel"/>
+                        </span>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
               <div>
                 <ion-icon name="call-outline" class="flex-x-button"></ion-icon>
                 (949) 325 - 68594
-                <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;">
-                  <ion-icon name="pencil-sharp" ></ion-icon>
-                </button>
+                <div class="dropdown">
+                  <button class="btn-filled default-filled flex-button gt-sm" style="font-weight:bolder;" onclick="myFunction('phone_no')">
+                    <ion-icon name="pencil-sharp" ></ion-icon>
+                  </button>
+
+                  <div id="phone_no" class="dropdown-content">
+
+                    <div class="card bg-white ">
+                      <div class="flex-container flex-center">
+                        <div class="floating-label">
+                            <!-- <input type="text" placeholder="Enter Email" name="email" required> -->
+                            <input id="first" type="text" required>
+                            <label for="first">Phone Number</label>
+                          </div>
+                      </div>
+
+                      <div class="flex-container flex-center align-center">
+
+                        <input class="btn-filled info-filled card-m-default-s" type="submit" value="Send"/>
+                        <span onclick="dFunction('phone_no')">
+                          <input class="btn info card-m-default-s" type="button"  value="Cancel"/>
+                        </span>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -431,12 +660,12 @@
           // Get the element with id="defaultOpen" and click on it
           document.getElementById("defaultOpen").click();
 
-          function myFunction() {
-            document.getElementById("myDropdown").classList.add("show");
+          function myFunction(id) {
+            document.getElementById(id).classList.add("show");
           }
 
-          function dFunction() {
-            document.getElementById("myDropdown").classList.remove("show");
+          function dFunction(id) {
+            document.getElementById(id).classList.remove("show");
           }
 
         </script>
