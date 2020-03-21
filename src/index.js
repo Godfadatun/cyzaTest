@@ -32,7 +32,6 @@ function clearButtomColor(params) {
 }
 
 function changePage(id, number) {
-  
   if (number > 4) {
     page = 5;
   } else if (number < 2) {
@@ -100,12 +99,21 @@ function moveTouch(e) {
       // swiped left
       // console.log("swiped left");
 
+      if (page + 1 > 5) {
+        return;
+      }
+
       clearTab();
       clearButtomColor();
       changePage("tab" + (page + 1), page + 1);
     } else {
       // swiped right
       // console.log("swiped right");
+
+      if (page - 1 < 1) {
+        return;
+      }
+
       clearTab();
       clearButtomColor();
       changePage("tab" + (page - 1), page - 1);

@@ -92,16 +92,6 @@ module.exports = {
         from: "./src/images/*",
         to: "images/",
         flatten: true
-      },
-      {
-        from: "./src/images/icons/*",
-        to: "images/icons",
-        flatten: true
-      },
-      {
-        from: "./src/images/img/*",
-        to: "images/img",
-        flatten: true
       }
     ]),
     new MiniCssExtractPlugin({
