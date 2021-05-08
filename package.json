@@ -30,7 +30,7 @@
   "dependencies": {
     "autocomplete.js": "^0.36.0",
     "css-loader": "^2.1.1",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
